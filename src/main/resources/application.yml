@@ -1,0 +1,23 @@
+# src/main/resources/application.yml
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/tickets
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+  metrics:
+    export:
+      prometheus:
+        enabled: true
